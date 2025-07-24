@@ -1,0 +1,235 @@
+{
+  "ENST": {
+    "template_pipeline": "Clients/ENST/Templates - DOCX/EnstorKaty_PipelineReportTemplate.docx",
+    "template_summary": "Clients/ENST/Templates - DOCX/EnstorKaty_SummaryReport_Template.docx",
+    "report_prefix": "EnstorKaty",
+    "placeholders": {
+      "pipeline": {
+        "{{ PLACEHOLDER_DATE_TIME }}": "",
+        "{{ FILE_NAME }}": "",
+        "{{ LATITUDE }}": "",
+        "{{ LONGITUDE }}": "",
+        "{{ GOOGLE_URL }}": "",
+        "{{ PILOT_NOTES }}": ""
+      },
+      "summary": {
+        "{{ PIPELINE_ID }}": "",
+        "{{ Photo_ID }}": "",
+        "{{ LAT_LONG }}": "",
+        "{{ CODE }}": "",
+        "{{ STATUS }}": "",
+        "{{ NOTE_FIELD }}": ""
+      }
+    },
+    "image_box": [
+      49.64,
+      78.52,
+      576.64,
+      375.35
+    ]
+  },
+  "GFT": {
+    "template_pipeline": "Clients/GFT/Templates - DOCX/GFT_PipelineReportTemplate.docx",
+    "template_summary": "Clients/GFT/Templates - DOCX/GFT_SummaryReport_Template.docx",
+    "report_prefix": "GFT",
+    "placeholders": {
+      "pipeline": {
+        "{{ PLACEHOLDER_DATE_TIME }}": "",
+        "{{ FILE_NAME }}": "",
+        "{{ LATITUDE }}": "",
+        "{{ LONGITUDE }}": "",
+        "{{ GOOGLE_URL }}": "",
+        "{{ PILOT_NOTES }}": ""
+      },
+      "summary": {
+        "{{ PIPELINE_ID }}": "",
+        "{{ Photo_ID }}": "",
+        "{{ LAT_LONG }}": "",
+        "{{ CODE }}": "",
+        "{{ STATUS }}": "",
+        "{{ NOTE_FIELD }}": ""
+      }
+    },
+    "image_box": [
+      49.64,
+      78.52,
+      576.64,
+      375.35
+    ]
+  },
+  "HAT": {
+    "template_pipeline": "Clients/HAT/Templates - DOCX/HAT_PipelineReportTemplate.docx",
+    "template_summary": "Clients/HAT/Templates - DOCX/HAT_SummaryReport_Template.docx",
+    "report_prefix": "HoustonAmmoniaTerminal",
+    "placeholders": {
+      "pipeline": {
+        "{{ PLACEHOLDER_DATE_TIME }}": "",
+        "{{ FILE_NAME }}": "",
+        "{{ LATITUDE }}": "",
+        "{{ LONGITUDE }}": "",
+        "{{ GOOGLE_URL }}": "",
+        "{{ PILOT_NOTES }}": ""
+      },
+      "summary": {
+        "{{ PIPELINE_ID }}": "",
+        "{{ Photo_ID }}": "",
+        "{{ LAT_LONG }}": "",
+        "{{ CODE }}": "",
+        "{{ STATUS }}": "",
+        "{{ NOTE_FIELD }}": ""
+      }
+    },
+    "image_box": [
+      49.64,
+      78.52,
+      576.64,
+      375.35
+    ]
+  },
+  "HGS": {
+    "template_pipeline": "Clients/HGS/Templates - DOCX/TargaHGS_PipelineReportTemplate.docx",
+    "template_summary": "Clients/HGS/Templates - DOCX/TargaHGS_SummaryReport_Template.docx",
+    "report_prefix": "TargaHGS",
+    "placeholders": {
+      "pipeline": {
+        "{{ PLACEHOLDER_DATE_TIME }}": "",
+        "{{ FILE_NAME }}": "",
+        "{{ LATITUDE }}": "",
+        "{{ LONGITUDE }}": "",
+        "{{ GOOGLE_URL }}": "",
+        "{{ PILOT_NOTES }}": ""
+      },
+      "summary": {
+        "{{ PIPELINE_ID }}": "",
+        "{{ Photo_ID }}": "",
+        "{{ LAT_LONG }}": "",
+        "{{ CODE }}": "",
+        "{{ STATUS }}": "",
+        "{{ NOTE_FIELD }}": ""
+      }
+    },
+    "image_box": [
+      49.64,
+      78.52,
+      576.64,
+      375.35
+    ]
+  },
+  "HOW": {
+    "template_pipeline": "Clients/HOW/Templates - DOCX/Howard_PipelineReportTemplate.docx",
+    "template_summary": "Clients/HOW/Templates - DOCX/Howard_SummaryReport_Template.docx",
+    "report_prefix": "HowardEnergy",
+    "placeholders": {
+      "pipeline": {
+        "{{ PLACEHOLDER_DATE_TIME }}": "",
+        "{{ FILE_NAME }}": "",
+        "{{ LATITUDE }}": "",
+        "{{ LONGITUDE }}": "",
+        "{{ GOOGLE_URL }}": "",
+        "{{ PILOT_NOTES }}": ""
+      },
+      "summary": {
+        "{{ PIPELINE_ID }}": "",
+        "{{ Photo_ID }}": "",
+        "{{ LAT_LONG }}": "",
+        "{{ CODE }}": "",
+        "{{ STATUS }}": "",
+        "{{ NOTE_FIELD }}": ""
+      }
+    },
+    "image_box": [
+      49.64,
+      78.52,
+      576.64,
+      375.35
+    ]
+  },
+  "TL": {
+    "template_pipeline": "Clients/TL/Templates - DOCX/Total_PipelineReportTemplate.docx",
+    "template_summary": "Clients/TL/Templates - DOCX/Total_SummaryReport_Template.docx",
+    "report_prefix": "TotalPortArthur",
+    "placeholders": {
+      "pipeline": {
+        "{{ PLACEHOLDER_DATE_TIME }}": "",
+        "{{ FILE_NAME }}": "",
+        "{{ LATITUDE }}": "",
+        "{{ LONGITUDE }}": "",
+        "{{ GOOGLE_URL }}": "",
+        "{{ PILOT_NOTES }}": ""
+      },
+      "summary": {
+        "{{ PIPELINE_ID }}": "",
+        "{{ Photo_ID }}": "",
+        "{{ LAT_LONG }}": "",
+        "{{ CODE }}": "",
+        "{{ STATUS }}": "",
+        "{{ NOTE_FIELD }}": ""
+      }
+    },
+    "image_box": [
+      49.64,
+      78.52,
+      576.64,
+      375.35
+    ]
+  },
+  "TRD": {
+    "template_pipeline": "Clients/TRD/Templates - DOCX/TargaDelaware_PipelineReportTemplate.docx",
+    "template_summary": "Clients/TRD/Templates - DOCX/TargaDelaware_Summary_Template.docx",
+    "report_prefix": "TargaND",
+    "placeholders": {
+      "pipeline": {
+        "{{ PLACEHOLDER_DATE_TIME }}": "",
+        "{{ FILE_NAME }}": "",
+        "{{ LATITUDE }}": "",
+        "{{ LONGITUDE }}": "",
+        "{{ GOOGLE_URL }}": "",
+        "{{ PILOT_NOTES }}": ""
+      },
+      "summary": {
+        "{{ PIPELINE_ID }}": "",
+        "{{ Photo_ID }}": "",
+        "{{ LAT_LONG }}": "",
+        "{{ CODE }}": "",
+        "{{ STATUS }}": "",
+        "{{ NOTE_FIELD }}": ""
+      }
+    },
+    "image_box": [
+      49.64,
+      78.52,
+      576.64,
+      375.35
+    ]
+  },
+  "AP": {
+    "template_pipeline": "Clients/AP/Templates - DOCX/AirProducts_PipelineReportTemplate.docx",
+    "template_summary": "Clients/AP/Templates - DOCX/AirProducts_SummaryReport_Template.docx",
+    "report_prefix": "AirProducts",
+    "placeholders": {
+      "pipeline": {
+        "{{ PLACEHOLDER_DATE_TIME }}": "",
+        "{{ FILE_NAME }}": "",
+        "{{ LATITUDE }}": "",
+
+        "{{ LONGITUDE }}": "",
+        "{{ GOOGLE_URL }}": "",
+        "{{ PILOT_NOTES }}": ""
+      },
+      "summary": {
+        "{{ PIPELINE_ID }}": "",
+        "{{ Photo_ID }}": "",
+        "{{ LAT_LONG }}": "",
+        "{{ CODE }}": "",
+        "{{ STATUS }}": "",
+        "{{ NOTE_FIELD }}": ""
+      }
+    },
+    "image_box": [
+      49.64,
+      78.52,
+      576.64,
+      375.35
+    ]
+  }
+}

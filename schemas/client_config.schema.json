@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "template_pipeline": {"type": "string"},
+    "template_summary": {"type": "string"},
+    "report_prefix": {"type": "string"},
+    "placeholders": {"type": "object"},
+    "image_box": {
+      "type": "array",
+      "items": {"type": "number"},
+      "minItems": 4,
+      "maxItems": 4
+    }
+  },
+  "required": [
+    "template_pipeline",
+    "template_summary",
+    "report_prefix",
+    "placeholders",
+    "image_box"
+  ]
+}

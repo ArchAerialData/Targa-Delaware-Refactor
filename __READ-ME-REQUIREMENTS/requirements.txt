@@ -1,0 +1,6 @@
+docxtpl
+piexif==1.1.3
+python-docx
+jsonschema
+pillow
+customtkinter>=5.2
