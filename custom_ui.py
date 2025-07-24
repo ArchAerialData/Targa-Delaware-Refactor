@@ -6,6 +6,16 @@ import sys
 import threading
 import queue
 from report_generator import OUTPUT_FOLDER_NAME
+
+TRD_PIPELINES = {
+    "RHNGL": "Red Hills NGL",
+    "RRGPX": "RR GPX Lateral - 2",
+    "RRR": "Road Runner Residue",
+    "RRTW": "Road Runner TW",
+    "RT": "Rojo Toro",
+    "RB": "Rojo Banco",
+    "RRDEI": "RR Double E Int",
+}
 from PIL import Image
 from pathlib import Path
 
@@ -101,6 +111,21 @@ class ReportGUI(ctk.CTk):
                                              command=self.update_cover_dir)
         self.client_menu.pack(side="left", fill="x", expand=True, padx=(10, 0))
 
+        # Pipeline Selection for TRD
+        self.pipeline_frame = ctk.CTkFrame(settings_card, fg_color="transparent")
+        pipeline_label = ctk.CTkLabel(self.pipeline_frame, text="Select Pipeline:", width=150, anchor="w")
+        pipeline_label.pack(side="left")
+        self.pipeline_var = ctk.StringVar()
+        pipeline_values = [f"{k} - {v}" for k, v in TRD_PIPELINES.items()]
+        self.pipeline_menu = ctk.CTkOptionMenu(self.pipeline_frame, variable=self.pipeline_var, values=pipeline_values)
+        if pipeline_values:
+            self.pipeline_var.set(pipeline_values[0])
+        self.pipeline_menu.pack(side="left", fill="x", expand=True, padx=(10, 0))
+        self.pipeline_frame.pack_forget()
+
+        # Ensure pipeline frame visibility based on initial client
+        self.update_cover_dir()
+
         # Cover Photo
         cover_frame = ctk.CTkFrame(settings_card, fg_color="transparent")
         cover_frame.pack(fill="x", padx=20, pady=10)
@@ -138,6 +163,10 @@ class ReportGUI(ctk.CTk):
 
     def update_cover_dir(self, *_):
         self.cover_var.set("")
+        if self.client_var.get() == "TRD":
+            self.pipeline_frame.pack(fill="x", padx=20, pady=10)
+        else:
+            self.pipeline_frame.pack_forget()
 
     def browse_cover(self):
         client = self.client_var.get()
@@ -160,6 +189,10 @@ class ReportGUI(ctk.CTk):
     def _on_generate(self):
         folder = self.path_var.get()
         client = self.client_var.get()
+        pipeline = None
+        if client == "TRD":
+            selection = self.pipeline_var.get()
+            pipeline = selection.split(" - ")[0] if selection else None
         cover = self.cover_var.get() or None
         pilots = self._collect_pilots()
         if not folder:
@@ -174,12 +207,12 @@ class ReportGUI(ctk.CTk):
         self.gen_btn.configure(state="disabled")
         self.update()
 
-        thread = threading.Thread(target=self._generate_thread, args=(folder, client, cover, pilots))
+        thread = threading.Thread(target=self._generate_thread, args=(folder, client, pipeline, cover, pilots))
         thread.start()
         self._check_queue()
 
-    def _generate_thread(self, folder, client, cover, pilots):
-        self.generate_callback(folder, client, cover, pilots, self._queue_progress, self._queue_status)
+    def _generate_thread(self, folder, client, pipeline, cover, pilots):
+        self.generate_callback(folder, client, pipeline, cover, pilots, self._queue_progress, self._queue_status)
 
     def _queue_progress(self, value):
         self.progress_queue.put(("progress", value))
