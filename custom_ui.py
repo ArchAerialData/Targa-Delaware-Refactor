@@ -121,11 +121,8 @@ class ReportGUI(ctk.CTk):
         if pipeline_values:
             self.pipeline_var.set(pipeline_values[0])
         self.pipeline_menu.pack(side="left", fill="x", expand=True, padx=(10, 0))
+
         self.pipeline_frame.pack_forget()
-
-
-        # Ensure pipeline frame visibility based on initial client
-        self.update_cover_dir()
 
 
         # Cover Photo
