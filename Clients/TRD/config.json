@@ -1,7 +1,7 @@
 {
   "template_pipeline": "Clients/TRD/Templates - DOCX/TargaDelaware_PipelineReportTemplate.docx",
   "template_summary": "Clients/TRD/Templates - DOCX/TargaDelaware_Summary_Template.docx",
-  "report_prefix": "TargaND",
+  "report_prefix": "TargaResources-ND",
   "placeholders": {
     "pipeline": {
       "{{ PLACEHOLDER_DATE_TIME }}": "",
