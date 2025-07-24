@@ -123,8 +123,10 @@ class ReportGUI(ctk.CTk):
         self.pipeline_menu.pack(side="left", fill="x", expand=True, padx=(10, 0))
         self.pipeline_frame.pack_forget()
 
+
         # Ensure pipeline frame visibility based on initial client
         self.update_cover_dir()
+
 
         # Cover Photo
         cover_frame = ctk.CTkFrame(settings_card, fg_color="transparent")
@@ -152,6 +154,9 @@ class ReportGUI(ctk.CTk):
         self.view_button = ctk.CTkButton(action_card, text="View Reports", command=self.open_reports, fg_color="blue")
         self.view_button.pack(pady=10)
         self.view_button.pack_forget()
+
+        # Ensure pipeline frame visibility based on initial client
+        self.update_cover_dir()
 
         # Bind resize event for logo
         self.bind("<Configure>", self._on_resize)
