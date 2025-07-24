@@ -1,0 +1,29 @@
+{
+  "template_pipeline": "Clients/TRD/Templates - DOCX/TargaDelaware_PipelineReportTemplate.docx",
+  "template_summary": "Clients/TRD/Templates - DOCX/TargaDelaware_Summary_Template.docx",
+  "report_prefix": "TargaND_RT",
+  "placeholders": {
+    "pipeline": {
+      "{{ PLACEHOLDER_DATE_TIME }}": "",
+      "{{ FILE_NAME }}": "",
+      "{{ LATITUDE }}": "",
+      "{{ LONGITUDE }}": "",
+      "{{ GOOGLE_URL }}": "",
+      "{{ PILOT_NOTES }}": ""
+    },
+    "summary": {
+      "{{ PIPELINE_ID }}": "",
+      "{{ Photo_ID }}": "",
+      "{{ LAT_LONG }}": "",
+      "{{ CODE }}": "",
+      "{{ STATUS }}": "",
+      "{{ NOTE_FIELD }}": ""
+    }
+  },
+  "image_box": [
+    49.64,
+    78.52,
+    576.64,
+    375.35
+  ]
+}

@@ -152,10 +152,22 @@ class ClientConfig:
     def __init__(self):
         self.base_dir = Path(__file__).parent
 
-    def get_settings(self, client):
+    def get_settings(self, client, pipeline=None):
         cfg_file = self.base_dir / "Clients" / client / "config.json"
         with cfg_file.open("r") as f:
             settings = json.load(f)
+        if pipeline:
+            pipeline_file = (
+                self.base_dir
+                / "Clients"
+                / client
+                / "Pipelines"
+                / f"{pipeline}.json"
+            )
+            if pipeline_file.exists():
+                with pipeline_file.open("r") as pf:
+                    pipeline_settings = json.load(pf)
+                settings.update(pipeline_settings)
         client_dir = self.base_dir / "Clients" / client
         templates_dir = client_dir / "Templates - DOCX"
         if templates_dir.is_dir():
@@ -403,10 +415,10 @@ class ReportGenerator:
             logging.error(f"EXIF error in {image_path}: {e}")
         return metadata
 
-    def generate_reports(self, folder, images, client="HGS", cover_docx=None, *, pilot_names=None):
+    def generate_reports(self, folder, images, client="HGS", cover_docx=None, pipeline=None, *, pilot_names=None):
         self.client = client
         pilot_names = pilot_names or []
-        settings = self.config.get_settings(client)
+        settings = self.config.get_settings(client, pipeline)
         if not settings.get("template_pipeline") or not settings.get("template_summary"):
             logging.error(f"Templates not found for {client}")
             return
@@ -625,8 +637,8 @@ class ReportApp:
     def run(self):
         from custom_ui import ReportGUI
 
-        def callback(folder, client, cover, pilots, set_progress, set_status):
-            self._generate(folder, client, cover, pilots, set_progress, set_status)
+        def callback(folder, client, pipeline, cover, pilots, set_progress, set_status):
+            self._generate(folder, client, pipeline, cover, pilots, set_progress, set_status)
 
         logo_file = Path(__file__).parent / "Arch_Aerial_LOGO.jpg"
         gui = ReportGUI(
@@ -638,7 +650,7 @@ class ReportApp:
         )
         gui.mainloop()
 
-    def _generate(self, folder, client, cover, pilots, set_progress, set_status):
+    def _generate(self, folder, client, pipeline, cover, pilots, set_progress, set_status):
         if not os.path.isdir(folder):
             set_status(text="Invalid folder")
             return
@@ -661,7 +673,7 @@ class ReportApp:
         config = ClientConfig()
         report_gen = ReportGenerator(config)
         cover_doc = cover if cover and os.path.exists(cover) else None
-        report_gen.generate_reports(folder, images, client, cover_doc, pilot_names=pilots)
+        report_gen.generate_reports(folder, images, client, cover_doc, pipeline, pilot_names=pilots)
         set_progress(0.75)
 
         set_status(text="Compressing PDFs...")
